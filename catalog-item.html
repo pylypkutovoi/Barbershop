@@ -85,11 +85,37 @@
    			</p>
    	</footer>
   
-   	<section class="modal modal-login">
-   		<h2>Личный кабинет</h2>
-   		<p>Введите свой логин и пароль</p>
-   		<!-- здесь будет форма -->
-   		<span class="modal-close">x</span>
-   	</section>     	
+      <section class="modal modal-login">
+        <h2>Личный кабинет</h2>
+        <p>Введите свой логин и пароль</p>
+        <form class="login-form" action="http://echo.htmlacademy.ru" method="post">
+          <p>
+            <label for="user-login" class="visually-hidden">Логин</label>
+            <input id="user-login" class="login-icon-user" type="text" name="login" placeholder="Логин">
+          </p>
+          <p> 
+            <label for="user-passowrd" class="visually-hidden">Пароль</label>
+            <input id="user-passowrd" class="login-icon-password" type="password" name="password" placeholder="Пароль">
+          </p>   
+          <p>
+             <label class="login-checkbox">
+            <input  type="checkbox" name="remember" class="visually-hidden">
+            <span class="checkbox-indicator"></span>
+           Запомнить меня
+         </label>
+            <a class="restore" href="#">Я забыл пароль</a>
+          </p>
+          <button class="button" type="submit">Войти</button>
+        </form>
+        <button class="modal-close" type="button">Закрыть</button>
+      </section>
+
+         <section class="modal modal-map">
+            <h2 class="visually-hidden">Как до нас добраться</h2>
+            <p>
+               <img src="img/map.jpg" width="780" height="560" alt="Офис компании по адресу ул.Большая Конюшенная 19/8, Санкт-Петербург">
+            </p>
+            <button class="modal-close" type="button">Закрыть</button>
+         </section> 
 </body>
 </html>
