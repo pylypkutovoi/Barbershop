@@ -28,6 +28,29 @@ a {
   text-decoration: none;
 }   
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+position: absolute;
+
+width: 1px;
+height: 1px;
+margin: -1px;
+border: 0;
+padding: 0;
+
+white-space: nowrap;
+
+clip-path: inset(100%);
+clip: rect(0 0 0 0);
+overflow: hidden;
+}
+
 .button {
   font: inherit;
 
@@ -105,20 +128,22 @@ a {
   justify-content: space-between;
 }
 
-.site-navigation {
+.site-navigation,
+.user-navigation {
+  list-style: none;
   margin: 0;
   padding: 0;
-  width: 620px;
+}
 
-  list-style: none;
+.site-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  width: 620px;
 }
 
 .user-navigation {
-  margin: 0;
-  padding: 0;
+  display: flex;
   width: 140px;
-  
-  list-style: none;
 }
 
 .inner-page .user-navigation {
@@ -127,6 +152,10 @@ a {
 
 .site-navigation a,
 .user-navigation a {
+  display: block;
+  padding: 25px 20px;
+
+  vertical-align: middle;
   color: #ffffff;
 }
 
@@ -136,6 +165,34 @@ a {
 .user-navigation a:focus {
   background-color: #242424;
 } 
+
+.user-navigation .login-link {
+  position: relative;
+  padding-left: 50px;
+}
+
+.login-link::before {
+  content: "";
+
+  position: absolute;
+  top: 27;
+  left: 24px;
+
+  width: 15px;
+  height: 18px;
+
+  background-image: url("../img/login.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  opacity: 0.3;
+}
+
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before {
+  opacity: 1;
+}
 
 .features {
   margin-bottom: 80px;
@@ -152,13 +209,37 @@ a {
 
 .feature-item {
   width: 300px;
+
   text-align: center;
-  
 }
 
 .feature-item h3{
+  position: relative;
+
+  margin: 0;
+  margin-bottom: 60px;
+
   font-size: 30px;
   line-height: 42px;
+}
+
+.feature-item h3::after {
+  content: "";
+
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+
+  background-color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.feature-item p {
+  margin: 0 10px;
 }
 
 .index-columns {
@@ -170,18 +251,38 @@ a {
   color: #000000;
 
   background-color: #f5f2;
-  background-image: url("../img/pattern-light.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
+  background-image: 
+    url("../img/line.png"),
+    url("../img/pattern-light.jpg");
+  background-position: center, 0 0;
+  background-repeat: no-repeat, repeat;
 }
 
 .index-columns h2{
+  margin: 0;
+  margin-bottom: 25px;
+
   font-size: 30px;
   line-height: 42px;
 }
 
 .news {
   width: 380px;
+
+  background: rgba(0, 128, 0 , 0.2);
+  box-shadow: 0 0 0 3px green;
+}
+
+.news-list {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.news-item {
+  margin-bottom: 25px;
 }
 
 .gallery {
@@ -196,11 +297,8 @@ a {
   width: 300px;
 }
 
-.news-list {
-  list-style: none;
-}
 
-.news-list time {
+.news-item time {
   text-transform: none;
 }
 
