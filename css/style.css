@@ -285,7 +285,7 @@ overflow: hidden;
 
   color: #000000;
 
-  background-color: #f5f2;
+  background-color: #f8f3f0;
   background-image: 
     url("../img/line.png"),
     url("../img/pattern-light.jpg");
@@ -516,7 +516,7 @@ overflow: hidden;
   line-height: 30px;
 }
 
-.filter ul {
+.filters ul {
   margin: 0;
   padding: 0;
 
