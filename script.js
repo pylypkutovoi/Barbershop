@@ -21,6 +21,7 @@
     link.addEventListener("click", function (evt) {
        
         evt.preventDefault();
+        evt.stopPropagation();
         popup.classList.add("modal-show");
 
       if (storage) {
